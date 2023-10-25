@@ -416,10 +416,11 @@ func SetSyncProviderWebDAV(webdav *conf.WebDAV) (err error) {
 var syncLock = sync.Mutex{}
 
 func CreateCloudSyncDir(name string) (err error) {
-	if conf.ProviderSiYuan != Conf.Sync.Provider {
-		err = errors.New(Conf.Language(131))
-		return
-	}
+// fixme 不注释的话无法使用同步功能
+// 	if conf.ProviderSiYuan != Conf.Sync.Provider {
+// 		err = errors.New(Conf.Language(131))
+// 		return
+// 	}
 
 	name = strings.TrimSpace(name)
 	name = gulu.Str.RemoveInvisible(name)
@@ -441,10 +442,11 @@ func CreateCloudSyncDir(name string) (err error) {
 }
 
 func RemoveCloudSyncDir(name string) (err error) {
-	if conf.ProviderSiYuan != Conf.Sync.Provider {
-		err = errors.New(Conf.Language(131))
-		return
-	}
+// fixme 不注释的话无法使用同步功能
+// 	if conf.ProviderSiYuan != Conf.Sync.Provider {
+// 		err = errors.New(Conf.Language(131))
+// 		return
+// 	}
 
 	msgId := util.PushMsg(Conf.Language(116), 15000)
 
